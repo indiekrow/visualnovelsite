@@ -214,18 +214,16 @@
   }
   all("figure[data-scene]").forEach((fig) => { const def = SCENES[fig.dataset.scene]; if (def) playScene(fig, def); });
 
-  // Thumbnails change the scene's background.
-  all("[data-thumbs-for]").forEach((strip) => {
-    const fig = one(`figure[data-scene="${strip.dataset.thumbsFor}"]`);
-    const btns = all("button[data-bg]", strip);
-    btns.forEach((b, n) => {
-      b.setAttribute("aria-pressed", n === 0 ? "true" : "false");
-      b.addEventListener("click", () => {
-        if (fig) fig.style.setProperty("--bg", `url('${b.dataset.bg}')`);
-        btns.forEach((o) => o.setAttribute("aria-pressed", o === b ? "true" : "false"));
-      });
-    });
-  });
+  // A picture under a scene opens larger when clicked. Every row behaves the same way.
+  const zoom = one("[data-zoom-dialog]");
+  if (zoom) {
+    const big = one("img", zoom), cap = one("p", zoom);
+    all("[data-zoom]").forEach((b) => b.addEventListener("click", () => {
+      big.src = b.dataset.zoom; big.alt = one("img", b).alt; cap.textContent = b.dataset.caption || "";
+      if (zoom.showModal) zoom.showModal(); else zoom.setAttribute("open", "");
+    }));
+    zoom.addEventListener("click", (e) => { if (e.target === zoom || e.target.closest(".zoom-close")) zoom.close(); });
+  }
 
   // The phone-width "Start your story" bar steps aside once the form itself is on screen.
   const bar = one(".sticky-cta"), ideaSection = one("#idea");

@@ -14,8 +14,8 @@
 <meta name="theme-color" content="#fbf6ee">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="style.css">
-<script src="config.js"></script>
+<link rel="stylesheet" href="style.css?v=14">
+<script src="config.js?v=14"></script>
 </head>
 <body>
 
@@ -94,12 +94,13 @@
               <span class="line">“It came with a train ticket. A real one! So it must be a serious scholarship.”</span>
             </figcaption>
           </figure>
-          <div class="thumbs" data-thumbs-for="thread">
-            <button type="button" data-bg="assets/rts-club.webp" aria-label="Show the literature club room"><img src="assets/rts-club.webp" alt="" loading="lazy"></button>
-            <button type="button" data-bg="assets/rts-tram.webp" aria-label="Show the tram stop"><img src="assets/rts-tram.webp" alt="" loading="lazy"></button>
-            <button type="button" data-bg="assets/rts-office.webp" aria-label="Show the professor's office"><img src="assets/rts-office.webp" alt="" loading="lazy"></button>
-            <button type="button" data-bg="assets/rts-promenade.webp" aria-label="Show the port promenade"><img src="assets/rts-promenade.webp" alt="" loading="lazy"></button>
+          <div class="gallery">
+            <button type="button" data-zoom="assets/rts-club.webp" data-caption="The literature club room"><img src="assets/rts-club.webp" alt="The literature club room, lined with bookshelves, cherry trees outside the window" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rts-tram.webp" data-caption="The tram stop"><img src="assets/rts-tram.webp" alt="A green tram at a stop under cherry trees in full bloom" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rts-office.webp" data-caption="The professor's office"><img src="assets/rts-office.webp" alt="A wood-panelled office with a sofa and a desk" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rts-promenade.webp" data-caption="The port promenade"><img src="assets/rts-promenade.webp" alt="A harbour promenade with food stalls, lanterns and fireworks over a lighthouse" loading="lazy"></button>
           </div>
+          <p class="gallery-note">Pictures from the game. Click one to see it larger.</p>
         </div>
         <div class="sample-copy">
           <p class="genre">Campus romance · drama</p>
@@ -132,11 +133,13 @@
               <span class="line">“She will not stop, Ren Asahina. She has named every dog on our street.”</span>
             </figcaption>
           </figure>
-          <div class="moments">
-            <img src="assets/nbb-beachhouse.webp" alt="A beach café with its shutters open, looking out to sea" loading="lazy">
-            <img src="assets/nbb-coffins.webp" alt="A vampire reclines on a sofa in a cellar lined with coffins, reading a page, while a young man sits on the rug reading his lines aloud" loading="lazy">
-            <img src="assets/nbb-garlic.webp" alt="A father proudly serves a platter of garlic pork while his wife smiles politely and one of the twins sneezes into a tissue" loading="lazy">
+          <div class="gallery">
+            <button type="button" data-zoom="assets/nbb-beachhouse.webp" data-caption="The beach café"><img src="assets/nbb-beachhouse.webp" alt="A beach café with its shutters open, looking out to sea" loading="lazy"></button>
+            <button type="button" data-zoom="assets/nbb-coffins.webp" data-caption="Reading practice in the cellar"><img src="assets/nbb-coffins.webp" alt="A vampire reclines on a sofa in a cellar lined with coffins, reading a page, while a young man sits on the rug reading his lines aloud" loading="lazy"></button>
+            <button type="button" data-zoom="assets/nbb-garlic.webp" data-caption="The first family dinner"><img src="assets/nbb-garlic.webp" alt="A father proudly serves a platter of garlic pork while his wife smiles politely and one of the twins sneezes into a tissue" loading="lazy"></button>
+            <button type="button" data-zoom="assets/nbb-beach.webp" data-caption="Zushi beach"><img src="assets/nbb-beach.webp" alt="A sunny beach lined with huts" loading="lazy"></button>
           </div>
+          <p class="gallery-note">Pictures from the game. Click one to see it larger.</p>
         </div>
         <div class="sample-copy">
           <p class="genre">Vampire comedy · slice of life</p>
@@ -539,6 +542,12 @@
 
 <a class="sticky-cta" href="#idea"><span>From <span data-price="standard">$20</span></span><strong>Start your story</strong></a>
 
-<script src="site.js"></script>
+<dialog class="zoom" data-zoom-dialog aria-label="Picture, enlarged">
+  <button type="button" class="zoom-close" aria-label="Close">&times;</button>
+  <img alt="">
+  <p></p>
+</dialog>
+
+<script src="site.js?v=14"></script>
 </body>
 </html>
