@@ -16,8 +16,8 @@ window.SITE = {
 
   turnaround: "1–3 days",             // after the customer has approved the plan
   prices: {
-    standard: 40,                     // US dollars
-    deluxe: 60,
+    standard: 20,                     // US dollars
+    deluxe: 35,
     audio: 20,                        // the optional voice-over and music add-on, on top of either size
   },
   year: 2026,
