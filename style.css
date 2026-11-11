@@ -130,7 +130,6 @@ p { margin: 0 0 14px; }
 .thumbs button[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--ember); }
 .thumbs img, .moments img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
 .moments img { aspect-ratio: 4 / 3; border-radius: 8px; box-shadow: 0 0 0 1px #1f243326; }
-.moments img.garlic { object-position: 60% 60%; }
 .genre { color: #a12d57; font: 600 12px/1 var(--ui); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
 .sample-copy h3 { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 14px; }
 .sample-copy > p:not(.genre):not(.size-note) { color: var(--ink-2); font: 400 17px/1.65 var(--story); }
