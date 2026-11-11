@@ -46,21 +46,27 @@
      scene opens on its best line, which comes a little later in the game. A beat is one click:
        { who, spr, fx, t }  a character speaks; spr swaps their sprite, fx is hop | shake | in
        { you: true, t }     the player's line        { as: "Name", t }  someone with no sprite
-       { t }                narration                { choice: [{ label, beats }] }  a choice, each with its outcome */
+       { t }                narration                { choice: [{ label, beats }] }  a choice, each with its outcome
+     Any beat may also carry enter: [who] and leave: [who] (someone with hidden: true in the cast walks on or off)
+     move: { who: "l" | "c" | "r" } (someone steps aside) and set: { who: sprite } (a reaction without a line). The stallholder's sprite was painted for this page:
+     in the game she has no picture. */
   const A = (name) => `assets/${name}.webp`;
   const SCENES = {
     hero: {
-      cast: { aoi: { name: "Aoi", color: "#fff07a", pos: "c", spr: "rts-aoi-surprised" } },
+      cast: {
+        aoi: { name: "Aoi", color: "#fff07a", pos: "c", spr: "rts-aoi-surprised" },
+        stall: { name: "Stallholder", color: "#e9dcc6", pos: "r", spr: "rts-stallholder", hidden: true, scale: 0.93 },
+      },
       beats: [
         { who: "aoi", spr: "rts-aoi-surprised", fx: "hop", t: "Everyone! This boy has eaten toast for breakfast every day for a year!" },
         { you: true, t: "Aoi—" },
         { who: "aoi", spr: "rts-aoi-embarrassed", fx: "hop", t: "Look at him. He's the *colour* of toast!" },
         { t: "The stallholders laugh. She shoves the squid into your hand." },
-        { t: "Then the woman at the dried-fish stall takes Aoi's chin in her hand." },
-        { as: "Stallholder", t: "You're Kaori's girl! … We thought you'd all gone to Kobe for good. After that business." },
+        { t: "Then the woman at the dried-fish stall takes Aoi's chin in her hand.", enter: ["stall"], move: { aoi: "l" }, set: { aoi: "rts-aoi-surprised" } },
+        { who: "stall", fx: "hop", t: "You're Kaori's girl! … We thought you'd all gone to Kobe for good. After that business." },
         { who: "aoi", spr: "rts-aoi-neutral", t: "She's well. Thank you. We're all well." },
         { t: "The smile's still there. It's a degree cooler." },
-        { you: true, t: "Aoi, what did she mean?" },
+        { you: true, t: "Aoi, what did she mean?", leave: ["stall"], move: { aoi: "c" } },
         { who: "aoi", t: "You've got squid on your cardigan." },
         { choice: [
           { label: "Let it go and make her laugh instead", beats: [
@@ -129,6 +135,8 @@
     fig.classList.add("live");
     for (const [key, c] of Object.entries(def.cast)) {
       const img = el("img", `spr spr-${c.pos}`); img.alt = ""; img.src = A(c.spr);
+      if (c.hidden) img.hidden = true;
+      if (c.scale) img.style.height = `${114 * c.scale}%`;
       img.addEventListener("animationend", () => img.classList.remove("fx-hop", "fx-shake", "fx-in"));
       sprites[key] = img; fig.append(img);
     }
@@ -145,10 +153,16 @@
     let queue, i, inBranch, overlay;
     const many = Object.keys(def.cast).length > 1;
 
+    const place = (key, pos) => { const s = sprites[key]; s.classList.remove("spr-l", "spr-c", "spr-r"); s.classList.add(`spr-${pos}`); };
+    const fx = (s, kind) => { s.classList.remove("fx-hop", "fx-shake", "fx-in"); void s.offsetWidth; s.classList.add(`fx-${kind}`); };
     function show(b) {
+      for (const [key, pos] of Object.entries(b.move || {})) place(key, pos);
+      for (const [key, file] of Object.entries(b.set || {})) sprites[key].src = A(file);
+      (b.leave || []).forEach((key) => { sprites[key].hidden = true; });
+      (b.enter || []).forEach((key) => { sprites[key].hidden = false; fx(sprites[key], "in"); });
       const c = b.who ? def.cast[b.who] : null;
       if (c && b.spr) sprites[b.who].src = A(b.spr);
-      if (c && b.fx) { const s = sprites[b.who]; s.classList.remove("fx-hop", "fx-shake", "fx-in"); void s.offsetWidth; s.classList.add(`fx-${b.fx}`); }
+      if (c && b.fx) fx(sprites[b.who], b.fx);
       if (many) for (const [k, s] of Object.entries(sprites)) s.classList.toggle("quiet", !!c && k !== b.who);
       name.textContent = c ? c.name : b.you ? "You" : b.as || "";
       name.style.setProperty("--c", c ? c.color : b.you ? "#ffffff" : "#d9dfee");
@@ -161,7 +175,7 @@
     function clearOverlay() { if (overlay) { overlay.remove(); overlay = null; } next.hidden = false; fig.classList.remove("veiled"); }
     function start() {
       clearOverlay(); queue = def.beats; i = 0; inBranch = false;
-      for (const [key, c] of Object.entries(def.cast)) { sprites[key].src = A(c.spr); sprites[key].classList.remove("quiet"); }
+      for (const [key, c] of Object.entries(def.cast)) { sprites[key].src = A(c.spr); sprites[key].classList.remove("quiet"); sprites[key].hidden = !!c.hidden; place(key, c.pos); }
       hint.textContent = "▶ Click to play"; hint.classList.add("pulse"); hint.hidden = false;
       show(queue[0]);
     }

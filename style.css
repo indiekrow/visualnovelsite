@@ -66,7 +66,7 @@ p { margin: 0 0 14px; }
 /* ---- A visual-novel scene, made of the game's own art ---- */
 .scene { position: relative; margin: 0; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; overflow: clip; container-type: inline-size;
   background: var(--bg) center / cover no-repeat, var(--night-3); box-shadow: 0 24px 60px #3a2a1a33, 0 0 0 1px #1f24331f; transition: background-image .3s; }
-.spr { position: absolute; bottom: -20%; height: 114%; width: auto; max-width: none; filter: drop-shadow(0 6px 14px #0006); transition: filter .2s; --x: -50%; transform: translateX(var(--x)); }
+.spr { position: absolute; bottom: -20%; height: 114%; width: auto; max-width: none; filter: drop-shadow(0 6px 14px #0006); transition: filter .2s, left .35s ease; --x: -50%; transform: translateX(var(--x)); }
 .spr-c { left: 50%; }
 .spr-l { left: 27%; }
 .spr-r { left: 73%; }
