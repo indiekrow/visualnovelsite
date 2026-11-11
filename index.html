@@ -14,8 +14,8 @@
 <meta name="theme-color" content="#fbf6ee">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="style.css?v=18">
-<script src="config.js?v=18"></script>
+<link rel="stylesheet" href="style.css?v=19">
+<script src="config.js?v=19"></script>
 </head>
 <body>
 
@@ -45,6 +45,7 @@
           It's a real game, and it's yours to keep.</p>
         <p class="price-line"><strong>From <span data-price="standard">€20</span></strong> <s class="was" data-offer><span class="sr">Regular price </span><span data-regular="standard">€40</span></s><span data-offer data-offer-label>Launch price</span><span>ready in <span data-turnaround>3 days</span></span></p>
         <p class="price-note">Paid when you order. If the story plan isn't for you, you get <span data-plan-refund>half your money back</span>.</p>
+        <p class="free-line" data-free data-free-open hidden><span class="pill">Free for now</span> A small game made from your idea. <span data-free-count>6 of 6 left</span>. <a href="#free">See how</a></p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#idea">Bring your story to life</a>
           <a class="btn btn-ghost" href="#demo">Play a free demo</a>
@@ -250,6 +251,25 @@
     <div class="wrap">
       <p class="kicker">Pricing</p>
       <h2>Pick the size of your story</h2>
+      <div class="free" id="free" data-free hidden>
+        <div class="free-copy">
+          <p class="free-tag"><span class="pill">Free for now</span> <span><span data-free-count>6 of 6 left</span><span data-free-until> until 25 November</span></span></p>
+          <h3>A small game, made for free</h3>
+          <p>Send an idea and we'll make a short game from it, about the size of our demo, <a href="#demo">Results Day</a>. All we ask is that you play it and tell us what you thought.</p>
+          <ul class="free-list">
+            <li>Up to 3 characters</li>
+            <li>About 10 minutes of story</li>
+            <li>A few choices</li>
+            <li>Plays in your browser, yours to keep</li>
+          </ul>
+        </div>
+        <div class="free-side">
+          <p class="price">Free</p>
+          <a class="btn btn-primary" data-free-link>Ask for a free game</a>
+          <p class="free-how" data-free-how></p>
+        </div>
+        <p class="fine"><span data-free-slots>6</span> games in total, one per person, for the first ideas that fit the <a href="#rules">house rules</a>. A free game is made straight from your idea, so there is no story plan to approve and no round of changes, and it is made in the order the ideas arrive.</p>
+      </div>
       <div class="plans">
         <div class="plan">
           <h3>Standard</h3>
@@ -457,6 +477,10 @@
         <summary>What is a visual novel?</summary>
         <p>A story you play. You read it on screen with pictures of the characters and places, and every so often you choose what to do. Your choices change what happens and how it ends. If you can read a text message, you can play one. Try the scene at the top of this page.</p>
       </details>
+      <details data-free data-free-open hidden>
+        <summary>Is the free game really free?</summary>
+        <p>Yes. While we're getting started, we're making <span data-free-slots>6</span> small games at no cost<span data-free-until> until 25 November</span>. You send an idea, we make a short game from it, with up to three characters and about ten minutes of story, and you play it. There is nothing to pay. All we ask is that you tell us what you thought. It's a smaller game than an order, made straight from your idea, with no story plan to approve and no round of changes. See <a href="#free">the free offer</a>.</p>
+      </details>
       <details>
         <summary>How is it made?</summary>
         <p>The art is generated with AI that runs locally and corrected by hand. The story is planned and written by a person. Every game is played through before it's delivered. The details are under <a href="#ai">Made with local AI, not the cloud</a>.</p>
@@ -577,6 +601,7 @@
         <h3>Order on Ko-fi</h3>
         <p>Pick Standard or Deluxe on our Ko-fi page and write your idea into the order: who it's about, where it happens, and the mood. A sentence or two is enough.</p>
         <p>You pay when you order. Your story plan comes first, for you to approve.</p>
+        <p data-free data-free-open hidden>Want to try us first? <a href="#free">Ask for one of the free small games</a> (<span data-free-count>6 of 6 left</span>).</p>
         <div class="pay" data-pay hidden>
           <div class="cta-row" data-order-buttons></div>
         </div>
@@ -606,6 +631,6 @@
   <p></p>
 </dialog>
 
-<script src="site.js?v=18"></script>
+<script src="site.js?v=19"></script>
 </body>
 </html>

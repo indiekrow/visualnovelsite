@@ -40,5 +40,15 @@ window.SITE = {
     deluxe: 70,
   },
   offerLabel: "Launch price",
+
+  // The free offer: a few small games (up to 3 characters, about 10 minutes) made at no cost, for a short while.
+  // It shows above the prices, in the hero and in the FAQ. Delete `free`, or set slots to 0, to take it off the page.
+  free: {
+    slots: 6,                         // how many free games you'll make in total
+    taken: 0,                         // raise this each time you accept one; at `slots` the page says they're all taken
+    until: "2026-11-25",              // the last day to ask, as year-month-day; the day after, the offer leaves the page. "" for no end date
+    url: "",                          // where people ask for one (a free listing on Ko-fi, a form…). "" uses kofiOrderUrl
+    how: "On our Ko-fi page, pick the free game and write your idea into the order.",   // shown under the button
+  },
   year: 2026,
 };

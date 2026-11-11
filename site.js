@@ -60,6 +60,27 @@
     const list = names.length > 1 ? `${names.slice(0, -1).join(", ")} or ${names[names.length - 1]}` : names[0];
     all("[data-pay-methods]").forEach((n) => (n.textContent = list));
   }
+  // The free offer: a few small games at no cost, for a short while. It shows while config.js has `free` with slots,
+  // there is somewhere to ask, and its last day hasn't passed. Once every slot is taken, the card stays and says so.
+  const F = S.free || {};
+  const count = (v) => Math.max(0, Math.floor(Number(v) || 0));
+  const freeSlots = count(F.slots), freeLeft = Math.max(0, freeSlots - count(F.taken));
+  const ymd = /^(\d{4})-(\d{2})-(\d{2})$/.exec(F.until || "");
+  const freeEnd = ymd ? new Date(+ymd[1], ymd[2] - 1, +ymd[3], 23, 59, 59) : null;
+  const freeUrl = safeUrl(F.url) || kofiOrder;
+  const freeOn = freeSlots > 0 && !!freeUrl && !(freeEnd && new Date() > freeEnd);
+  all("[data-free]").forEach((n) => (n.hidden = !freeOn || (n.hasAttribute("data-free-open") && !freeLeft)));
+  if (freeOn) {
+    const until = freeEnd && freeLeft ? ` until ${freeEnd.toLocaleDateString("en-GB", { day: "numeric", month: "long" })}` : "";
+    all("[data-free-until]").forEach((n) => (n.textContent = until));
+    all("[data-free-slots]").forEach((n) => (n.textContent = freeSlots));
+    all("[data-free-count]").forEach((n) => (n.textContent = freeLeft ? `${freeLeft} of ${freeSlots} left` : "All taken"));
+    all("[data-free-link]").forEach((a) => { a.href = freeUrl; a.target = "_blank"; a.rel = "noopener"; a.hidden = !freeLeft; });
+    all("[data-free-how]").forEach((n) => {
+      n.textContent = freeLeft ? (typeof F.how === "string" ? F.how : "") : `All ${freeSlots} free games have been taken. Thank you!`;
+    });
+  }
+
   all("[data-contact]").forEach((a) => { if (email) { a.href = `mailto:${email}`; a.hidden = false; } });
   all("[data-kofi]").forEach((a) => { if (kofi) { a.href = kofi; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; } });
 
