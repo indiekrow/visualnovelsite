@@ -1,6 +1,6 @@
 // The site's settings: the only file you need to edit. Save it and re-upload the folder.
 window.SITE = {
-  brand: "visualnovels.ai",           // shown at the top and in the browser tab
+  brand: "GoodEndGames",              // shown at the top and in the browser tab
   tagline: "Bring your story to life as a game you can play.",
 
   // How the idea form ("Bring your story to life") reaches you:
