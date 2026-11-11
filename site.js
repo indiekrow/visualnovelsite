@@ -14,17 +14,28 @@
   }
   if (S.tagline) all("[data-tagline]").forEach((n) => (n.textContent = S.tagline));
   if (S.turnaround) all("[data-turnaround]").forEach((n) => (n.textContent = S.turnaround));
+  if (S.priorityTurnaround) all("[data-priority-turnaround]").forEach((n) => (n.textContent = S.priorityTurnaround));
   if (S.planRefund) all("[data-plan-refund]").forEach((n) => (n.textContent = S.planRefund));
   if (S.year) all("[data-year]").forEach((n) => (n.textContent = S.year));
-  for (const [k, v] of Object.entries(S.prices || {})) all(`[data-price="${k}"]`).forEach((n) => (n.textContent = `$${v}`));
+  const cur = typeof S.currency === "string" && S.currency ? S.currency : "$";
+  for (const [k, v] of Object.entries(S.prices || {})) all(`[data-price="${k}"]`).forEach((n) => (n.textContent = `${cur}${v}`));
   // The launch offer: regular prices crossed out beside the current ones. With no regularPrices, none of it shows.
   const regular = S.regularPrices || {};
   const onOffer = Object.keys(regular).some((k) => regular[k] > (S.prices || {})[k]);
-  all("[data-regular]").forEach((n) => { if (regular[n.dataset.regular]) n.textContent = `$${regular[n.dataset.regular]}`; });
+  all("[data-regular]").forEach((n) => { if (regular[n.dataset.regular]) n.textContent = `${cur}${regular[n.dataset.regular]}`; });
   all("[data-offer-label]").forEach((n) => { if (S.offerLabel) n.textContent = S.offerLabel; });
   all("[data-offer]").forEach((n) => (n.hidden = !onOffer));
 
-  const etsy = safeUrl(S.etsyUrl), paypal = safeUrl(S.paypalUrl), email = safeEmail(S.contactEmail);
+  const email = safeEmail(S.contactEmail), kofi = safeUrl(S.kofiUrl);
+  // The payment routes that are switched on: [name on the page, button label, link].
+  // Ko-fi comes first: it is where orders are placed.
+  const kofiOrder = safeUrl(S.kofiOrderUrl);
+  const pays = [["Ko-fi", "Order on Ko-fi", kofiOrder], ["Etsy", "Pay on Etsy", safeUrl(S.etsyUrl)],
+    ["PayPal", "Pay with PayPal", safeUrl(S.paypalUrl)]].filter((p) => p[2]);
+  let formMode = ["netlify", "email", "off"].includes(S.ideaForm) ? S.ideaForm : "netlify";
+  if (formMode === "email" && !email) formMode = "off";
+  // With no idea form, a Ko-fi order link makes Ko-fi the whole order route: the idea is written into the order there.
+  const kofiOrders = !!kofiOrder && formMode === "off";
   const make = (label, href, cls, external) => {
     const a = el("a", `btn ${cls}`, label); a.href = href;
     if (external) { a.target = "_blank"; a.rel = "noopener"; }
@@ -32,14 +43,25 @@
   };
   // Payment links come after a plan is agreed, so they sit beside the form rather than replacing it.
   all("[data-order-buttons]").forEach((box) => {
-    const btns = [];
-    if (etsy) btns.push(make("Pay on Etsy", etsy, "btn-primary", true));
-    if (paypal) btns.push(make("Pay with PayPal", paypal, etsy ? "btn-ghost" : "btn-primary", true));
+    const btns = pays.map(([, label, href], i) => make(label, href, i ? "btn-ghost" : "btn-primary", true));
     box.replaceChildren(...btns);
     const pay = box.closest("[data-pay]");
-    if (pay) pay.hidden = !btns.length;
+    if (pay) pay.hidden = !btns.length || (kofiOrders && !box.closest("[data-idea-order]"));
   });
+  // Ordering on Ko-fi: the order card stands where the form would, and the lines about the form say Ko-fi instead.
+  if (kofiOrders) {
+    all("[data-idea-order]").forEach((n) => (n.hidden = false));
+    all("[data-kofi-text]").forEach((n) => (n.textContent = n.dataset.kofiText));
+    all("[data-kofi-ask]").forEach((n) => (n.hidden = !kofi));
+  }
+  // The page names only the payment routes that are switched on.
+  if (pays.length) {
+    const names = pays.map((p) => p[0]);
+    const list = names.length > 1 ? `${names.slice(0, -1).join(", ")} or ${names[names.length - 1]}` : names[0];
+    all("[data-pay-methods]").forEach((n) => (n.textContent = list));
+  }
   all("[data-contact]").forEach((a) => { if (email) { a.href = `mailto:${email}`; a.hidden = false; } });
+  all("[data-kofi]").forEach((a) => { if (kofi) { a.href = kofi; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; } });
 
   /* ---- Playable scenes ----
      Every line is taken from the game's own script (export/build/<game>/stage/game.json), trimmed to fit; the Mio
@@ -256,8 +278,7 @@
   /* ---- Idea form ---- */
   const form = one("[data-idea-form]");
   if (form) {
-    let mode = ["netlify", "email", "off"].includes(S.ideaForm) ? S.ideaForm : "netlify";
-    if (mode === "email" && !email) mode = "off";
+    const mode = formMode;
     const msg = one("[data-form-msg]", form), done = one("[data-idea-done]");
     const real = one("[data-real]", form), permBox = one("[data-permission]", form), perm = one("input", permBox);
     const idea = form.elements.idea;
@@ -265,7 +286,7 @@
 
     if (mode === "off") {
       form.hidden = true;
-      if (!etsy && !paypal) { done.hidden = false; one("h3", done).textContent = "Orders are opening soon."; one("p", done).textContent = "Come back in a little while."; }
+      if (!pays.length) { done.hidden = false; one("h3", done).textContent = "Orders are opening soon."; one("p", done).textContent = "Come back in a little while."; }
     }
     real.addEventListener("change", () => { permBox.hidden = !real.checked; if (!real.checked) perm.checked = false; });
     all("[data-pick-plan]").forEach((a) => a.addEventListener("click", () => {

@@ -10,18 +10,28 @@ window.SITE = {
   ideaForm: "email",                  // GitHub Pages has no form service; with contactEmail empty the form stays hidden
   contactEmail: "",                   // also the fallback if the form can't send, and the contact link in the footer
 
-  // Payment links, shown beside the form as "Ready to order?". A link left as "" hides its button.
+  // Where orders are placed: your Ko-fi commissions link. While the idea form is hidden, the page sends people there
+  // to order and to describe their idea. "" switches it off.
+  kofiOrderUrl: "https://ko-fi.com/goodendgames/commissions",
+
+  // Other payment links, shown as buttons after the Ko-fi one. A link left as "" hides its button.
   etsyUrl: "",                        // your Etsy listing, e.g. "https://www.etsy.com/listing/..."
   paypalUrl: "",                      // your PayPal.me or payment link, e.g. "https://www.paypal.com/paypalme/yourname"
 
-  turnaround: "1–3 days",             // after the customer has approved the plan
+  // Your Ko-fi page, shown as "Support on Ko-fi" in the footer. It is for tips, not orders. "" hides the link.
+  kofiUrl: "https://ko-fi.com/goodendgames",
+
+  turnaround: "3 days",               // after the customer has approved the plan
+  priorityTurnaround: "1 day",        // the same, with the priority add-on (prices.priority)
   // Orders are paid up front. What a customer gets back if they stop after seeing the story plan, in words that fit
   // "you get ...": for example "half your money back" or "a 50% refund".
-  planRefund: "a partial refund",
+  planRefund: "half your money back",
+  currency: "€",                      // the sign shown before every price; the Ko-fi listings charge in euros
   prices: {
-    standard: 20,                     // US dollars
+    standard: 20,                     // must match the Ko-fi listings
     deluxe: 35,
-    audio: 20,                        // the optional voice-over and music add-on, on top of any size
+    priority: 10,                     // the priority add-on: ready in priorityTurnaround instead of turnaround
+    audio: 20,                       // the voice-over and music add-on; the page says it is coming soon
   },
   // A launch offer: the regular prices are shown crossed out beside the prices above, labelled with offerLabel.
   // Only show a regular price you really will charge once the offer ends. Remove regularPrices to turn it off.
