@@ -14,14 +14,15 @@
 <meta name="theme-color" content="#fbf6ee">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="style.css?v=14">
-<script src="config.js?v=14"></script>
+<link rel="stylesheet" href="style.css?v=15">
+<script src="config.js?v=15"></script>
 </head>
 <body>
 
 <header class="nav">
   <a class="brand" href="#top" data-brand>visualnovels.ai</a>
   <nav class="nav-links" aria-label="Sections">
+    <a href="#demo">Demo</a>
     <a href="#samples">Samples</a>
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
@@ -46,7 +47,7 @@
         <p class="price-note">Paid when you order. If the story plan isn't for you, you get <span data-plan-refund>a partial refund</span>.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#idea">Bring your story to life</a>
-          <a class="btn btn-ghost" href="#samples">See sample games</a>
+          <a class="btn btn-ghost" href="#demo">Play a free demo</a>
         </div>
         <p class="trust">Made with AI that runs locally, not in the cloud. Nothing goes to an online AI company unless you add the optional voice-over.
           <a href="#ai">How it's made</a></p>
@@ -83,9 +84,48 @@
     <div class="wrap">
       <p class="kicker">Sample games</p>
       <h2>See what a story becomes</h2>
-      <p class="sub">Click a scene to play a moment from it.</p>
+      <p class="sub">Play one from start to finish in your browser, or click a scene to play a moment from it.</p>
 
-      <article class="sample">
+      <article class="sample" id="demo">
+        <div class="sample-media">
+          <figure class="scene" data-scene="results" style="--bg: url('assets/rd-corridor.webp')">
+            <img class="spr spr-c" src="assets/rd-leo-worried.webp" alt="Leo, a tall young man with curly hair in a maroon varsity jacket, one fist raised">
+            <figcaption class="box">
+              <span class="name" style="--c:#9fc98a">Leo</span>
+              <span class="line">“Poster.”</span>
+            </figcaption>
+          </figure>
+          <div class="gallery">
+            <button type="button" data-zoom="assets/rd-surprise.webp" data-caption="The surprise"><img src="assets/rd-surprise.webp" alt="In an art room full of gold and white balloons, Sara sets off a party popper above her head while Leo holds a cake" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rd-phone.webp" data-caption="Opening the email"><img src="assets/rd-phone.webp" alt="Sara, Joel and Leo crowd shoulder to shoulder over one glowing phone" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rd-cake.webp" data-caption="Cake on the art room floor"><img src="assets/rd-cake.webp" alt="Three friends sit on the floor laughing, a half-eaten cake in front of them" loading="lazy"></button>
+            <button type="button" data-zoom="assets/rd-classroom.webp" data-caption="Room 12"><img src="assets/rd-classroom.webp" alt="A sunlit classroom with rows of desks and a tote bag left on a chair" loading="lazy"></button>
+          </div>
+          <p class="gallery-note">Pictures from the game. Click one to see it larger.</p>
+        </div>
+        <div class="sample-copy">
+          <p class="genre">School comedy · free demo</p>
+          <h3>Results Day</h3>
+          <p>Joel's university answer arrives at noon, and he has promised to open it with his two best friends.
+            So why is Sara whispering behind her planner, and what is that under Leo's jacket? One school day,
+            two terrible liars, and a secret that depends on what you do before the last bell.</p>
+          <ul class="stats">
+            <li><strong>10</strong> minutes</li>
+            <li><strong>4</strong> choices</li>
+            <li><strong>3</strong> characters</li>
+          </ul>
+          <p class="size-note">Smaller than an order: a short one to try.</p>
+          <div class="cast">
+            <span class="face" role="img" aria-label="Joel" style="background-image: url('assets/rd-joel-neutral.webp')"></span>
+            <span class="face" role="img" aria-label="Sara" style="background-image: url('assets/rd-sara-happy.webp')"></span>
+            <span class="face" role="img" aria-label="Leo" style="background-image: url('assets/rd-leo-happy.webp')"></span>
+          </div>
+          <p><a class="btn btn-primary" href="play/results-day/">Play the whole game</a></p>
+          <p class="size-note">Plays in your browser. Nothing to download, no account.</p>
+        </div>
+      </article>
+
+      <article class="sample flip">
         <div class="sample-media">
           <figure class="scene" data-scene="thread" style="--bg: url('assets/rts-club.webp')">
             <img class="spr spr-c" src="assets/rts-mio-surprised.webp" alt="Mio, a young woman with a bob and a light blue dress, hands out in alarm">
@@ -123,7 +163,7 @@
         </div>
       </article>
 
-      <article class="sample flip">
+      <article class="sample">
         <div class="sample-media">
           <figure class="scene" data-scene="blood" style="--bg: url('assets/nbb-house.webp')">
             <img class="spr spr-l" src="assets/nbb-akari-smug.webp" alt="Akari, grinning in a cap and grey hoodie, hand on her hip">
@@ -423,7 +463,7 @@
       </details>
       <details>
         <summary>What do I need to play it?</summary>
-        <p>A Windows 10 or 11 PC. Mac and phones aren't supported yet. The game is a single file of about 115&nbsp;MB, delivered as a download link.</p>
+        <p>A Windows 10 or 11 PC. Mac and phones aren't supported yet. The game is a single file of about 115&nbsp;MB, delivered as a download link. The free demo, <a href="#demo">Results Day</a>, is the exception: it plays here in your browser.</p>
       </details>
       <details>
         <summary>Windows says “Windows protected your PC”. Is that safe?</summary>
@@ -548,6 +588,6 @@
   <p></p>
 </dialog>
 
-<script src="site.js?v=14"></script>
+<script src="site.js?v=15"></script>
 </body>
 </html>

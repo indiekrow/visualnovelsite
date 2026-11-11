@@ -85,6 +85,28 @@
       ],
       end: { t: "That was one choice. A story has dozens, and yours could start anywhere.", cta: { label: "Bring your story to life", href: "#idea" } },
     },
+    results: {
+      cast: {
+        leo: { name: "Leo", color: "#9fc98a", pos: "c", spr: "rd-leo-worried" },
+        sara: { name: "Sara", color: "#ff8c42", pos: "r", spr: "rd-sara-angry", hidden: true },
+      },
+      beats: [
+        { who: "leo", t: "Poster." },
+        { you: true, t: "What poster?" },
+        { who: "leo", t: "...Geography." },
+        { you: true, t: "You dropped geography." },
+        { who: "leo", spr: "rd-leo-neutral", t: "And look how much I miss it." },
+        { who: "sara", fx: "shake", t: "LEO! There you are! We're late for choir!", enter: ["sara"], move: { leo: "l" } },
+        { who: "leo", t: "For what?" },
+        { who: "sara", t: "Choir. I told you to say choir." },
+        { who: "leo", t: "I said geography." },
+        { who: "sara", spr: "rd-sara-worried", fx: "hop", t: "Why would you say geography?" },
+        { who: "leo", t: "Why would I say choir? I can't sing." },
+        { t: "They've forgotten you're here. It's almost restful." },
+        { you: true, t: "I'm right here." },
+      ],
+      end: { t: "They are hiding something. They are very bad at it.", cta: { label: "Play the whole game", href: "play/results-day/" } },
+    },
     thread: {
       cast: { mio: { name: "Mio", color: "#7cc7ff", pos: "c", spr: "rts-mio-surprised" } },
       beats: [

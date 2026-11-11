@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  --night: #0f131c; --night-2: #161c28; --night-3: #1d2533; --line: #2b3444;
+  --silver: #dde2ec; --dust: #8e98ab; --moon: #c4cbf2; --moon-dim: #3a4266;
+  --ember: #e8a15a; --ember-dim: #4a3522; --say: #f2e5c7;
+  --display: "Marcellus SC", "Palatino Linotype", Palatino, Georgia, serif;
+  --story: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--night); color: var(--silver); font: 15px/1.5 var(--story); overflow: hidden; }
+[hidden] { display: none !important; }
+button { font: inherit; }
+
+#app, .screen { position: fixed; inset: 0; }
+
+/* ---- Title screen ---- */
+#title { display: grid; place-items: end start; background: var(--night); }
+.title-art { position: absolute; inset: 0; background: linear-gradient(165deg, var(--night-3), var(--night) 75%) center / cover no-repeat; }
+.title-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0f131cf2 0%, #0f131cc0 38%, #0f131c30 70%, transparent); }
+.title-card { position: relative; margin: 0 0 8vh 7vw; max-width: min(560px, 86vw); }
+.title-kicker { font: 400 13px/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--ember); margin-bottom: 14px; }
+.title-card h1 { font: 400 clamp(34px, 6vw, 64px)/1.05 var(--display); margin: 0 0 14px; color: #fff; letter-spacing: .02em; }
+.title-card p { margin: 0 0 30px; color: var(--silver); opacity: .85; font-size: 16px; max-width: 46ch; }
+.title-menu { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.title-menu button { background: none; border: 0; color: var(--silver); font: 400 21px/1.2 var(--display); letter-spacing: .06em; padding: 6px 0; cursor: pointer; transition: color .15s, transform .15s; }
+.title-menu button:hover, .title-menu button:focus-visible { color: var(--ember); transform: translateX(6px); outline: none; }
+.title-endings { margin-top: 26px; font: 12px/1.4 var(--mono); color: var(--dust); letter-spacing: .06em; }
+
+/* ---- Play screen ---- */
+#play { display: flex; background: #000; }
+#vn { flex: 1; height: 100%; }
+#vn .vn-stage { border-radius: 0; border: 0; }
+.menu-btn { position: absolute; top: 12px; right: 14px; z-index: 30; background: #0f131cb0; color: var(--silver); border: 1px solid var(--line);
+  border-radius: 6px; padding: 5px 12px; font: 12px/1.4 var(--mono); letter-spacing: .06em; cursor: pointer; backdrop-filter: blur(4px); }
+.menu-btn:hover { border-color: var(--ember); color: var(--ember); }
+
+/* Cards the stage shows over the scene: a place card, a chapter card, an ending. */
+.vn-card-in { display: grid; place-items: center; text-align: center; height: 100%; padding: 6%; background: #0f131cd8; }
+.vn-card-in .arc-kicker { font: 400 clamp(11px, 1.6cqw, 16px)/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--ember); margin-bottom: .9em; }
+.vn-card-in .arc-title { font: 400 clamp(22px, 4.6cqw, 52px)/1.1 var(--display); color: #fff; letter-spacing: .03em; }
+.vn-card-in .arc-sub { margin-top: 1em; color: var(--dust); font-size: clamp(12px, 1.6cqw, 16px); }
+.vn-card-in .card-btns { margin-top: 2.2em; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.vn-card-in .card-btns button { background: none; border: 1px solid var(--line); color: var(--silver); border-radius: 6px; padding: 8px 18px; cursor: pointer; font: 400 15px/1.2 var(--display); letter-spacing: .05em; }
+.vn-card-in .card-btns button:hover { border-color: var(--ember); color: var(--ember); }
+
+/* ---- Panels ---- */
+dialog.panel { background: var(--night-2); color: var(--silver); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px 18px;
+  width: min(360px, calc(100vw - 32px)); box-shadow: 0 20px 60px #000a; }
+dialog.panel.wide { width: min(820px, calc(100vw - 32px)); }
+dialog.panel::backdrop { background: #05070bb8; backdrop-filter: blur(2px); }
+dialog.panel h2 { margin: 0 0 16px; font: 400 22px/1.2 var(--display); letter-spacing: .04em; color: #fff; }
+.panel-list { display: flex; flex-direction: column; gap: 6px; }
+.panel-list button, .panel-close { background: var(--night-3); border: 1px solid var(--line); color: var(--silver); border-radius: 8px; padding: 9px 14px;
+  text-align: left; cursor: pointer; font: 400 16px/1.2 var(--display); letter-spacing: .04em; }
+.panel-list button:hover, .panel-close:hover { border-color: var(--ember); color: var(--ember); }
+.panel-close { margin-top: 16px; width: 100%; text-align: center; }
+.field { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 0; }
+.field select { background: var(--night-3); color: var(--silver); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; font: inherit; }
+
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; max-height: 62vh; overflow: auto; }
+.slot { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; background: var(--night-3); border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px; cursor: pointer; text-align: left; color: var(--silver); }
+.slot:hover:not(:disabled) { border-color: var(--ember); }
+.slot:disabled { opacity: .45; cursor: default; }
+.slot-thumb { width: 96px; aspect-ratio: 16 / 9; border-radius: 4px; background: var(--night) center / cover no-repeat; }
+.slot-name { font: 400 14px/1.2 var(--display); color: #fff; }
+.slot-meta { font: 11px/1.4 var(--mono); color: var(--dust); margin-top: 3px; }
+
+.backlog-list { max-height: 64vh; overflow: auto; padding-right: 6px; }
+.backlog-list .bl-scene { font: 11px/1 var(--mono); color: var(--ember); letter-spacing: .14em; text-transform: uppercase; margin: 18px 0 8px; }
+.backlog-list .bl-scene:first-child { margin-top: 0; }
+.backlog-list p { margin: 0 0 9px; }
+.backlog-list .bl-who { color: var(--say); font-weight: 600; margin-right: .4em; }
+.backlog-list .bl-you { color: var(--moon); }
+.backlog-list .bl-time { color: var(--dust); font: 12px/1.4 var(--mono); }
