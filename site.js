@@ -14,6 +14,7 @@
   }
   if (S.tagline) all("[data-tagline]").forEach((n) => (n.textContent = S.tagline));
   if (S.turnaround) all("[data-turnaround]").forEach((n) => (n.textContent = S.turnaround));
+  if (S.planRefund) all("[data-plan-refund]").forEach((n) => (n.textContent = S.planRefund));
   if (S.year) all("[data-year]").forEach((n) => (n.textContent = S.year));
   for (const [k, v] of Object.entries(S.prices || {})) all(`[data-price="${k}"]`).forEach((n) => (n.textContent = `$${v}`));
   // The launch offer: regular prices crossed out beside the current ones. With no regularPrices, none of it shows.

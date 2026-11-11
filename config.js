@@ -10,11 +10,14 @@ window.SITE = {
   ideaForm: "email",                  // GitHub Pages has no form service; with contactEmail empty the form stays hidden
   contactEmail: "",                   // also the fallback if the form can't send, and the contact link in the footer
 
-  // Payment links, shown as "Already agreed a plan? Pay here". A link left as "" hides its button.
+  // Payment links, shown beside the form as "Ready to order?". A link left as "" hides its button.
   etsyUrl: "",                        // your Etsy listing, e.g. "https://www.etsy.com/listing/..."
   paypalUrl: "",                      // your PayPal.me or payment link, e.g. "https://www.paypal.com/paypalme/yourname"
 
   turnaround: "1–3 days",             // after the customer has approved the plan
+  // Orders are paid up front. What a customer gets back if they stop after seeing the story plan, in words that fit
+  // "you get ...": for example "half your money back" or "a 50% refund".
+  planRefund: "a partial refund",
   prices: {
     standard: 20,                     // US dollars
     deluxe: 35,
