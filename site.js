@@ -72,33 +72,6 @@
       ],
       end: { t: "That was one choice. A story has dozens, and yours could start anywhere.", cta: { label: "Bring your story to life", href: "#idea" } },
     },
-    light: {
-      cast: { ysolde: { name: "Ysolde", color: "#9fb0c8", pos: "c", spr: "fl-ysolde-neutral" } },
-      beats: [
-        { who: "ysolde", spr: "fl-ysolde-neutral", t: "You're late. The wick's wet." },
-        { t: "She wrings it, and oil and water run between her fingers onto the brass." },
-        { who: "ysolde", t: "The Board sends me a letter and a child, in that order. Put the bag down somewhere it won't roll." },
-        { t: "The clockwork under the lamp ticks, unwound. Far out on the water, where no boat should be, there is a point of light." },
-        { choice: [
-          { label: "Offer to climb up and check the lens and the burner", beats: [
-            { t: "She strikes a lucifer. The flame touches the wick, hisses, and dies." },
-            { who: "ysolde", spr: "fl-ysolde-worried", t: "Store roof. A month of rain into the oil." },
-            { t: "A second match. The same hiss. The strait outside is a shade darker than it was." },
-          ] },
-          { label: "Ask why the light matters so much tonight", beats: [
-            { who: "ysolde", spr: "fl-ysolde-angry", fx: "shake", t: "It matters every night." },
-            { t: "She says it to the lamp, not to you." },
-            { who: "ysolde", spr: "fl-ysolde-worried", t: "If this lamp is dark when he's on the Teeth, that's the end of the Reddys on this coast. So. The lens." },
-          ] },
-          { label: "Say nothing, and look out at the water", beats: [
-            { t: "And out on the water, a light. When you have watched it for the space of three breaths it goes out, and comes back." },
-            { who: "ysolde", t: "There's nothing out there. Fishermen don't cross in this. Lens." },
-            { t: "The light stays." },
-          ] },
-        ] },
-      ],
-      end: { t: "Five endings start from that room.", cta: { label: "Play the whole game", href: "play/first-light/" } },
-    },
     thread: {
       cast: { mio: { name: "Mio", color: "#7cc7ff", pos: "c", spr: "rts-mio-surprised" } },
       beats: [
