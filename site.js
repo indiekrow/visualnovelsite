@@ -16,6 +16,12 @@
   if (S.turnaround) all("[data-turnaround]").forEach((n) => (n.textContent = S.turnaround));
   if (S.year) all("[data-year]").forEach((n) => (n.textContent = S.year));
   for (const [k, v] of Object.entries(S.prices || {})) all(`[data-price="${k}"]`).forEach((n) => (n.textContent = `$${v}`));
+  // The launch offer: regular prices crossed out beside the current ones. With no regularPrices, none of it shows.
+  const regular = S.regularPrices || {};
+  const onOffer = Object.keys(regular).some((k) => regular[k] > (S.prices || {})[k]);
+  all("[data-regular]").forEach((n) => { if (regular[n.dataset.regular]) n.textContent = `$${regular[n.dataset.regular]}`; });
+  all("[data-offer-label]").forEach((n) => { if (S.offerLabel) n.textContent = S.offerLabel; });
+  all("[data-offer]").forEach((n) => (n.hidden = !onOffer));
 
   const etsy = safeUrl(S.etsyUrl), paypal = safeUrl(S.paypalUrl), email = safeEmail(S.contactEmail);
   const make = (label, href, cls, external) => {

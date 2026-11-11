@@ -18,7 +18,14 @@ window.SITE = {
   prices: {
     standard: 20,                     // US dollars
     deluxe: 35,
-    audio: 20,                        // the optional voice-over and music add-on, on top of either size
+    audio: 20,                        // the optional voice-over and music add-on, on top of any size
   },
+  // A launch offer: the regular prices are shown crossed out beside the prices above, labelled with offerLabel.
+  // Only show a regular price you really will charge once the offer ends. Remove regularPrices to turn it off.
+  regularPrices: {
+    standard: 40,
+    deluxe: 70,
+  },
+  offerLabel: "Launch price",
   year: 2026,
 };
