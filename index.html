@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bring your story to life as a game you can play</title>
+<meta name="description" content="Bring your story to life as a visual novel with its own characters, art, choices and endings. From $40, ready in days, made with AI that runs locally.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bring your story to life as a game you can play">
+<meta property="og:description" content="A custom visual novel with its own characters, art, choices and endings. From $40. A gift nobody else will give.">
+<!-- Once the site has an address, make this a full link, e.g. https://yourname.netlify.app/assets/og.jpg (see README). -->
+<meta property="og:image" content="https://indiekrow.github.io/visualnovelsite/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbf6ee">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top" data-brand>visualnovels.ai</a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#samples">Samples</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#why-ai">Made with AI</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-small" href="#idea">Start your story</a>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Custom visual novels</p>
+        <h1 data-tagline>Bring your story to life as a game you can play.</h1>
+        <p class="lede">Start with a story you wish existed: a gift for someone, an adventure starring your friends, or one
+          where you're the hero. <span data-brand>visualnovels.ai</span> turns it into a finished visual novel with its own characters, art and endings.
+          It's a real game, and it's yours to keep.</p>
+        <p class="price-line"><strong>From <span data-price="standard">$40</span></strong><span>ready in <span data-turnaround>1–3 days</span></span></p>
+        <p class="price-note">Nothing to pay until you approve the plan for your story.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#idea">Bring your story to life</a>
+          <a class="btn btn-ghost" href="play/first-light/">Play a sample game</a>
+        </div>
+        <p class="trust">Made with AI that runs locally, not in the cloud. Nothing goes to an online AI company unless you add the optional voice-over.
+          <a href="#ai">How it's made</a></p>
+      </div>
+      <div class="hero-scene">
+        <figure class="scene" data-scene="hero" style="--bg: url('assets/rts-promenade.webp')">
+          <img class="spr spr-c" src="assets/rts-aoi-surprised.webp" alt="Aoi, a young woman with a ponytail and a yellow cardigan, arms flung wide">
+          <figcaption class="box">
+            <span class="name" style="--c:#fff07a">Aoi</span>
+            <span class="line">“Everyone! This boy has eaten toast for breakfast every day for a year!”</span>
+          </figcaption>
+        </figure>
+        <p class="scene-note"><strong>Try it:</strong> click the scene to play a moment from <em>Red Thread Spring</em>.
+          A visual novel is a story you play. You read, the characters talk to you, and your choices change how it ends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Made for -->
+  <section class="section tight" aria-labelledby="for-h">
+    <div class="wrap">
+      <h2 id="for-h" class="h2-small">Made for…</h2>
+      <ul class="for">
+        <li><h3>A gift nobody else will give</h3><p>An anniversary, a birthday, a goodbye. Your story together, with a dedication on the title screen.</p></li>
+        <li><h3>Your friend group</h3><p>Your flatmates, your book club, your tabletop party: the cast of a mystery or a comedy.</p></li>
+        <li><h3>The story you wish existed</h3><p>That idea you've carried for years. A haunted lighthouse. A bakery run by a retired witch.</p></li>
+        <li><h3>You, as the hero</h3><p>Your name on the main character, and a story that turns on what you choose.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Samples -->
+  <section id="samples" class="section alt">
+    <div class="wrap">
+      <p class="kicker">Sample games</p>
+      <h2>See what a story becomes</h2>
+      <p class="sub">Click any scene to play a moment from it. The first one you can play from start to finish, right here in your browser.</p>
+
+      <article class="sample">
+        <div class="sample-media">
+          <figure class="scene" data-scene="light" style="--bg: url('assets/fl-lamp.webp')">
+            <img class="spr spr-c" src="assets/fl-ysolde-neutral.webp" alt="Ysolde, a grey-haired lighthouse keeper in a heavy scarf and cape">
+            <figcaption class="box">
+              <span class="name" style="--c:#9fb0c8">Ysolde</span>
+              <span class="line">“You're late. The wick's wet.”</span>
+            </figcaption>
+          </figure>
+          <div class="thumbs" data-thumbs-for="light">
+            <button type="button" data-bg="assets/fl-lamp.webp" aria-label="Show the lamp room"><img src="assets/fl-lamp.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/fl-kitchen.webp" aria-label="Show the keeper's kitchen"><img src="assets/fl-kitchen.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/fl-stairs.webp" aria-label="Show the landing stairs"><img src="assets/fl-stairs.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/fl-shore.webp" aria-label="Show the shore"><img src="assets/fl-shore.webp" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="sample-copy">
+          <p class="genre">Mystery</p>
+          <h3>First Light</h3>
+          <p>One storm night at a lighthouse. A ferry that shouldn't cross, a lamp that won't light, and a case nobody
+            on this coast wants found. You've just arrived as the keeper's new assistant, and she is not pleased.</p>
+          <ul class="stats">
+            <li><strong>5</strong> endings</li>
+            <li><strong>3</strong> characters</li>
+            <li><strong>10</strong> minutes to play</li>
+          </ul>
+          <p class="size-note">A short one, smaller than a Standard order.</p>
+          <div class="cast">
+            <span class="face" role="img" aria-label="Ysolde" style="background-image: url('assets/fl-ysolde-determined.webp')"></span>
+            <span class="face" role="img" aria-label="Tam" style="background-image: url('assets/fl-tam-surprised.webp')"></span>
+            <span class="face" role="img" aria-label="Aurel" style="background-image: url('assets/fl-aurel-angry.webp')"></span>
+          </div>
+          <a class="btn btn-primary" href="play/first-light/">Play the whole game in your browser</a>
+        </div>
+      </article>
+
+      <article class="sample flip">
+        <div class="sample-media">
+          <figure class="scene" data-scene="thread" style="--bg: url('assets/rts-club.webp')">
+            <img class="spr spr-c" src="assets/rts-mio-surprised.webp" alt="Mio, a young woman with a bob and a light blue dress, hands out in alarm">
+            <figcaption class="box">
+              <span class="name" style="--c:#7cc7ff">Mio</span>
+              <span class="line">“It came with a train ticket. A real one! So it must be a serious scholarship.”</span>
+            </figcaption>
+          </figure>
+          <div class="thumbs" data-thumbs-for="thread">
+            <button type="button" data-bg="assets/rts-club.webp" aria-label="Show the literature club room"><img src="assets/rts-club.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/rts-tram.webp" aria-label="Show the tram stop"><img src="assets/rts-tram.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/rts-office.webp" aria-label="Show the professor's office"><img src="assets/rts-office.webp" alt="" loading="lazy"></button>
+            <button type="button" data-bg="assets/rts-promenade.webp" aria-label="Show the port promenade"><img src="assets/rts-promenade.webp" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="sample-copy">
+          <p class="genre">Campus romance · drama</p>
+          <h3>Red Thread Spring</h3>
+          <p>Your childhood friend came back to Hiiragi wearing a red thread on her wrist. A small city on a bay,
+            a coffee shop at the tram stop, a literature club, and a university society that ties people together and
+            doesn't let go. Three storylines, and a hidden fourth that opens once you've seen them all.</p>
+          <ul class="stats">
+            <li><strong>100+</strong> scenes</li>
+            <li><strong>4</strong> storylines</li>
+            <li><strong>12</strong> endings</li>
+          </ul>
+          <p class="size-note">About the size of a Deluxe order.</p>
+          <div class="cast">
+            <span class="face" role="img" aria-label="Aoi" style="background-image: url('assets/rts-aoi-embarrassed.webp')"></span>
+            <span class="face" role="img" aria-label="Sayaka" style="background-image: url('assets/rts-sayaka-neutral.webp')"></span>
+            <span class="face" role="img" aria-label="Mio" style="background-image: url('assets/rts-mio-surprised.webp')"></span>
+            <span class="face" role="img" aria-label="Rin" style="background-image: url('assets/rts-rin-angry.webp')"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="sample">
+        <div class="sample-media">
+          <figure class="scene" data-scene="blood" style="--bg: url('assets/nbb-house.webp')">
+            <img class="spr spr-l" src="assets/nbb-akari-smug.webp" alt="Akari, grinning in a cap and grey hoodie, hand on her hip">
+            <img class="spr spr-r" src="assets/nbb-yoru.webp" alt="Yoru, in a black dress with a paper parasol on her shoulder">
+            <figcaption class="box">
+              <span class="name" style="--c:#c7a8ff">Yoru</span>
+              <span class="line">“She will not stop, Ren Asahina. She has named every dog on our street.”</span>
+            </figcaption>
+          </figure>
+          <div class="moments">
+            <img src="assets/nbb-beachhouse.webp" alt="A beach café with its shutters open, looking out to sea" loading="lazy">
+            <img src="assets/nbb-coffins.webp" alt="A vampire reads on a sofa in a cellar lined with coffins while a young man looks on, exasperated" loading="lazy">
+            <img class="garlic" src="assets/nbb-garlic.webp" alt="A father proudly serves dinner beside an enormous bulb of garlic on a plate" loading="lazy">
+          </div>
+        </div>
+        <div class="sample-copy">
+          <p class="genre">Vampire comedy · slice of life</p>
+          <h3>Not By Blood</h3>
+          <p>Dad came home from Osaka married. Your new step-mother works nights and never eats, and her twin
+            daughters can't come into your room unless you invite them in. They're vampires, all three of them, and
+            they are trying very hard to be normal. A summer of family dinners, shifts at the beach café and one
+            household learning to live together. Tonight's welcome dinner has garlic in it.</p>
+          <ul class="stats">
+            <li><strong>260+</strong> scenes</li>
+            <li><strong>16</strong> endings</li>
+            <li><strong>8</strong> characters</li>
+          </ul>
+          <p class="size-note">Much bigger than an order.</p>
+          <div class="cast">
+            <span class="face" role="img" aria-label="Akari" style="background-image: url('assets/nbb-akari-neutral.webp')"></span>
+            <span class="face" role="img" aria-label="Yoru" style="background-image: url('assets/nbb-yoru.webp')"></span>
+            <span class="face" role="img" aria-label="Tsubaki" style="background-image: url('assets/nbb-tsubaki-surprised.webp')"></span>
+            <span class="face" role="img" aria-label="Shizuka" style="background-image: url('assets/nbb-shizuka-embarrassed.webp')"></span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>From one sentence to a game you can play</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <h3>Share your idea</h3>
+          <p>A sentence is enough: who it's about, where, and the mood. It's free to ask.</p>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <h3>Get your story plan</h3>
+          <p>The cast, the world and how the story branches. Change anything you like before anything is made.</p>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <h3>Approve it and pay</h3>
+          <p>Only once you're happy with the plan. Payment goes through Etsy or PayPal.</p>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <h3>Download and play</h3>
+          <p>Usually ready in <span data-turnaround>1–3 days</span>. One round of changes to the story is included.</p>
+        </li>
+      </ol>
+
+      <div class="features">
+        <div><h3>Characters made for your story</h3><p>Full-body character art created for your story, each with up to eight expressions.</p></div>
+        <div><h3>A picture for every place</h3><p>A background for each location, shifting with the time of day.</p></div>
+        <div><h3>Choices that matter</h3><p>Branching scenes, different storylines and several endings, including bad ones if you want them.</p></div>
+        <div><h3>A proper game</h3><p>Title screen, save slots and autosave, and you can scroll back through what was said.</p></div>
+        <div><h3>Plays offline</h3><p>One file you download. It runs on Windows 10 and 11, with no account and no internet needed.</p></div>
+        <div><h3>Made personal</h3><p>Your names, your setting, your tone, and a dedication on the title screen if it's a gift.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section alt">
+    <div class="wrap">
+      <p class="kicker">Pricing</p>
+      <h2>Two sizes of story</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Standard</h3>
+          <p class="price"><span data-price="standard">$40</span></p>
+          <p class="plan-sub">One story, start to finish</p>
+          <ul>
+            <li>A single storyline with choices that matter</li>
+            <li>2–4 endings</li>
+            <li>Up to 4 characters with expressions</li>
+            <li>About 1 hour of story</li>
+            <li>One round of changes</li>
+          </ul>
+          <a class="btn btn-ghost" href="#idea" data-pick-plan="Standard">Start with Standard</a>
+        </div>
+        <div class="plan featured">
+          <span class="badge">Fuller story</span>
+          <h3>Deluxe</h3>
+          <p class="price"><span data-price="deluxe">$60</span></p>
+          <p class="plan-sub">Several storylines to follow</p>
+          <ul>
+            <li>Shared opening chapters, then up to 3 character storylines</li>
+            <li>Good, bad and hidden endings</li>
+            <li>Up to 7 characters with expressions</li>
+            <li>About 2 hours of story</li>
+            <li>One round of changes</li>
+          </ul>
+          <a class="btn btn-primary" href="#idea" data-pick-plan="Deluxe">Start with Deluxe</a>
+        </div>
+      </div>
+      <div class="addon">
+        <div>
+          <p class="addon-tag">Optional add-on</p>
+          <h3>Full voice-over and music</h3>
+          <p>Every character's lines spoken aloud, and music for each scene. It can be added to either size. Without it, the game is silent.</p>
+          <p class="addon-note">The voices and music are made with ElevenLabs, an online AI audio service, so for this option the lines of your story are sent to them. Everything else is still made locally. <a href="#ai">How it's made</a></p>
+        </div>
+        <p class="price">+<span data-price="audio">$20</span></p>
+      </div>
+      <p class="fine">Prices in US dollars. Nothing to pay until you've approved the plan for your story.</p>
+    </div>
+  </section>
+
+  <!-- Why AI -->
+  <section id="why-ai" class="section why">
+    <div class="wrap">
+      <p class="kicker">Why AI</p>
+      <h2>Months of work, ready in days</h2>
+      <p class="sub">A visual novel is a lot of work: a cast of characters with a face for every mood, a picture for every place, and hours of story. Made alone and by hand, a game like this takes months, sometimes years.</p>
+      <div class="ai-grid three">
+        <div>
+          <h3>It makes the time possible</h3>
+          <p>AI does the slowest part, the pictures, so your game is usually ready in <span data-turnaround>1–3 days</span> instead of next year.</p>
+        </div>
+        <div>
+          <h3>It makes the price possible</h3>
+          <p>That much hand-drawn art would cost far more than most gifts. AI is what lets a one-off game, made for one person, start at <span data-price="standard">$40</span>.</p>
+        </div>
+        <div>
+          <h3>Creative supervision</h3>
+          <p>AI is fast, not careful. An experienced game developer reviews everything it produces, corrects the pictures by hand and writes the story. Expect good, consistent art, not the polish of a studio game that took years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI disclosure -->
+  <section id="ai" class="section">
+    <div class="wrap">
+      <p class="kicker">How it's made</p>
+      <h2>Made with local AI, not the cloud</h2>
+      <p class="sub">You should know exactly what you're buying, so here it is plainly.</p>
+      <div class="ai-grid">
+        <div>
+          <h3>AI-made art, directed by hand</h3>
+          <p>The pictures are generated by AI models and corrected by hand. The story is planned and written by a person. Every game is played through before you get it.</p>
+        </div>
+        <div>
+          <h3>It all runs locally</h3>
+          <p>Your idea, your story and your art are made on our own computer, not on someone else's servers. Nothing is sent to ChatGPT, Claude, Midjourney
+            or any other AI company, and what you send is never used to train anything. The one exception is yours to
+            choose: the optional voice-over and music add-on uses ElevenLabs, an online service.</p>
+        </div>
+        <div>
+          <h3>Not a chatbot with a prompt</h3>
+          <p><span data-brand>visualnovels.ai</span> runs on its own story engine. Open AI models run locally inside it, and it
+            keeps characters and facts consistent, directs every picture and checks the results. That is why you can't
+            get the same thing by typing into a general AI app.</p>
+        </div>
+        <div>
+          <h3>Deleted when you ask</h3>
+          <p>Ask, and your idea, script, art and game files are deleted from our computer. After that, the only copy is yours.</p>
+        </div>
+      </div>
+      <h3 class="made-h">What's in a game, and how each part is made</h3>
+      <table class="made">
+        <thead>
+          <tr><th scope="col">Part of the game</th><th scope="col">How AI is used</th><th scope="col">What's done by hand</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Characters <small>with their expressions and outfits</small></th>
+            <td data-label="How AI is used"><span class="tag tag-ai">Local AI</span> Generated by an AI model running locally.</td>
+            <td data-label="What's done by hand">Corrected by hand, so each character stays the same from one picture to the next.</td>
+          </tr>
+          <tr>
+            <th scope="row">Full-screen illustrations <small>the big moments in the story</small></th>
+            <td data-label="How AI is used"><span class="tag tag-ai">Local AI</span> Generated by an AI model running locally.</td>
+            <td data-label="What's done by hand">Corrected by hand, so the people and places match the rest of the game.</td>
+          </tr>
+          <tr>
+            <th scope="row">Backgrounds <small>a picture for every place</small></th>
+            <td data-label="How AI is used"><span class="tag tag-ai">Local AI</span> Generated by an AI model running locally.</td>
+            <td data-label="What's done by hand">Corrected by hand, so each place stays consistent.</td>
+          </tr>
+          <tr>
+            <th scope="row">Storyline <small>the plot, the storylines and the endings</small></th>
+            <td data-label="How AI is used"><span class="tag tag-hand">Written by hand</span> A local AI model is used only for spelling and grammar checks, and to translate the game if you want it in another language.</td>
+            <td data-label="What's done by hand">The plot points, the storylines and the English writing are done by a person, then carefully proofread and fixed.</td>
+          </tr>
+          <tr>
+            <th scope="row">Checking <small>before you get it</small></th>
+            <td data-label="How AI is used"><span class="tag tag-ai">Local AI</span> A local model can flag pictures that look wrong.</td>
+            <td data-label="What's done by hand">Every picture is looked at by a person, and the whole game is played through.</td>
+          </tr>
+          <tr>
+            <th scope="row">The game itself <small>title screen, menus and saves</small></th>
+            <td data-label="How AI is used"><span class="tag tag-none">No AI</span> Nothing is generated while you play, and the game never goes online.</td>
+            <td data-label="What's done by hand">It's ordinary software, the same player for every game, tested before delivery.</td>
+          </tr>
+          <tr>
+            <th scope="row">Voices and music <small>optional add-on; without it the game is silent</small></th>
+            <td data-label="How AI is used"><span class="tag tag-online">Online AI</span> Made with ElevenLabs, an online service. The lines of your story are sent to them.</td>
+            <td data-label="What's done by hand">A voice is chosen for each character and music for each scene, and the result is listened to before delivery.</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="plain-facts" aria-label="Plain facts">
+        <li>Your message reaches us through this site's host and by email, and payment goes through Etsy or PayPal, which keep their own records. When you ask for deletion, everything we hold is deleted, including your message.</li>
+        <li>If you add voice-over and music, the lines of your story, including any names in them, and a short description of each scene's mood are sent to ElevenLabs to make the audio. ElevenLabs handles that text under its own terms and privacy policy. If you don't add it, nothing is sent to them.</li>
+        <li>The sample games on this page were made while the engine was being built. Their art was made locally; their scripts were written with help from a cloud AI assistant. Games made to order are written locally.</li>
+        <li>This page loads nothing from other companies: no trackers, no analytics, no outside fonts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Story ideas and house rules -->
+  <section id="rules" class="section alt">
+    <div class="wrap two-col">
+      <div>
+        <p class="kicker">What we can make</p>
+        <h2>Almost any story</h2>
+        <p class="sub">Romance, comedy, drama, mystery, fantasy and spooky stories are all welcome. A few to get you started:</p>
+        <ul class="ideas">
+          <li>How we met, as a romantic comedy</li>
+          <li>A murder-mystery weekend starring my friends (nobody actually dies)</li>
+          <li>A retired witch opens a bakery; a dragon keeps ordering croissants</li>
+          <li>A ghost story on a night train where every passenger remembers a different destination</li>
+          <li>Our tabletop party's origin story</li>
+          <li>My grandmother's village, the summer she was twenty</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="rules-h">House rules</h3>
+        <ul class="rules">
+          <li class="yes"><strong>Stories about you and people you know are welcome.</strong> Share first names and describe each person in words (for example: brown skin, glasses, a little chubby).</li>
+          <li><strong>No photos.</strong> Characters are made from written descriptions only.</li>
+          <li><strong>Permission for real people.</strong> You confirm that everyone real in your story is happy to be in it. No celebrities or public figures.</li>
+          <li><strong>Original characters.</strong> None from existing anime, games, films or books, though “inspired by” is fine.</li>
+          <li><strong>Romance is between adults</strong> who look like adults. Flirty is fine; nothing explicit.</li>
+          <li>We'll say straight away if something can't be done, and may turn a request down.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="wrap narrow">
+      <p class="kicker">FAQ</p>
+      <h2>Questions</h2>
+      <details>
+        <summary>What is a visual novel?</summary>
+        <p>A story you play. You read it on screen with pictures of the characters and places, and every so often you choose what to do. Your choices change what happens and how it ends. If you can read a text message, you can play one. Try the scene at the top of this page.</p>
+      </details>
+      <details>
+        <summary>How is it made?</summary>
+        <p>The art is generated with AI that runs locally and corrected by hand. The story is planned and written by a person. Every game is played through before it's delivered. The details are under <a href="#ai">Made with local AI, not the cloud</a>.</p>
+      </details>
+      <details>
+        <summary>Can it be about me and people I know?</summary>
+        <p>Yes. Share first names and describe each person in words: hair, build, glasses, how they talk. Photos aren't accepted, and you'll be asked to confirm that everyone real in the story is happy to be in it.</p>
+      </details>
+      <details>
+        <summary>Can I give it as a gift?</summary>
+        <p>Yes, and it makes a good one. Say who it's for and a dedication goes on the title screen. You get a download link you can pass on.</p>
+      </details>
+      <details>
+        <summary>What do I need to play it?</summary>
+        <p>A Windows 10 or 11 PC. Mac and phones aren't supported yet. The game is a single file of about 115&nbsp;MB, delivered as a download link.</p>
+      </details>
+      <details>
+        <summary>Windows says “Windows protected your PC”. Is that safe?</summary>
+        <p>Windows shows that for programs from small makers that don't carry a paid publisher certificate. Click <em>More info</em>, then <em>Run anyway</em>.</p>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>Usually <span data-turnaround>1–3 days</span> after you've approved the plan.</p>
+      </details>
+      <details>
+        <summary>Can I ask for changes?</summary>
+        <p>Yes. One round of changes to the story is included: lines, names, a scene that should go differently. Bigger reworks are quoted separately.</p>
+      </details>
+      <details>
+        <summary>What if I change my mind?</summary>
+        <p>Nothing is paid until you approve the plan. If you cancel after paying but before work has started on your game, you get a full refund.</p>
+      </details>
+      <details>
+        <summary>What happens to my idea?</summary>
+        <p>It's used to make your game and nothing else, and it is never used to train anything. It stays on our own computer unless you add the voice-over and music option, in which case the lines of your story are sent to ElevenLabs to be voiced. Everything we hold, along with your game files, is deleted whenever you ask.</p>
+      </details>
+      <details>
+        <summary>Does the game have sound?</summary>
+        <p>Not as standard: the game is silent. For <span data-price="audio">$20</span> more you can add full voice-over and music. Those are made with ElevenLabs, an online AI audio service, so the lines of your story are sent to them. The voices come from their library; no real person's voice is copied.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Idea form -->
+  <section id="idea" class="section idea">
+    <div class="wrap idea-grid">
+      <div class="idea-copy">
+        <p class="kicker">Ready?</p>
+        <h2>Bring your story to life</h2>
+        <p class="sub">Share your idea in a sentence or two. You'll get back a plan for your story: the cast, the world and how it branches. It's free to ask, and there's nothing to pay until you approve the plan.</p>
+        <div class="pay" data-pay hidden>
+          <p class="pay-label">Already agreed a plan?</p>
+          <div class="cta-row" data-order-buttons></div>
+        </div>
+      </div>
+
+      <form class="idea-form" name="idea" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-idea-form novalidate>
+        <input type="hidden" name="form-name" value="idea">
+        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="row">
+          <label class="field">First name
+            <input type="text" name="name" autocomplete="given-name" required maxlength="60">
+          </label>
+          <label class="field">Email, for the reply
+            <input type="email" name="email" autocomplete="email" required maxlength="120">
+          </label>
+        </div>
+
+        <fieldset class="chips">
+          <legend>Who is it for?</legend>
+          <label><input type="radio" name="for" value="Me" checked><span>Me</span></label>
+          <label><input type="radio" name="for" value="A gift"><span>A gift</span></label>
+        </fieldset>
+
+        <fieldset class="chips">
+          <legend>What kind of story? <small>Pick any</small></legend>
+          <label><input type="checkbox" name="genre" value="Romance"><span>Romance</span></label>
+          <label><input type="checkbox" name="genre" value="Comedy"><span>Comedy</span></label>
+          <label><input type="checkbox" name="genre" value="Mystery"><span>Mystery</span></label>
+          <label><input type="checkbox" name="genre" value="Fantasy"><span>Fantasy</span></label>
+          <label><input type="checkbox" name="genre" value="Spooky"><span>Spooky</span></label>
+          <label><input type="checkbox" name="genre" value="Slice of life"><span>Slice of life</span></label>
+        </fieldset>
+
+        <label class="field">Your idea
+          <textarea name="idea" rows="5" required minlength="15" maxlength="3000" placeholder="Who is it about, where does it happen, and what's the mood?"></textarea>
+        </label>
+        <div class="starters" aria-label="Idea starters">
+          <span>Stuck? Start from one of these:</span>
+          <button type="button" data-starter="A romantic comedy about how Sam and I met at a climbing gym, set in a small seaside town. Sam is tall with curly hair and glasses. I'm the one who fell off the wall.">How we met</button>
+          <button type="button" data-starter="A murder-mystery weekend at a lake house starring my four best friends. Nobody actually dies. Priya is the detective and takes it far too seriously.">Friends mystery</button>
+          <button type="button" data-starter="A cosy fantasy about a retired witch who opens a bakery, and the dragon who keeps ordering croissants.">Cosy fantasy</button>
+          <button type="button" data-starter="A ghost story on a night train where every passenger remembers a different destination.">Ghost train</button>
+        </div>
+
+        <fieldset class="chips">
+          <legend>Which size?</legend>
+          <label><input type="radio" name="plan" value="Standard"><span>Standard</span></label>
+          <label><input type="radio" name="plan" value="Deluxe"><span>Deluxe</span></label>
+          <label><input type="radio" name="plan" value="Not sure yet" checked><span>Not sure yet</span></label>
+        </fieldset>
+
+        <label class="check"><input type="checkbox" name="audio" value="Yes">
+          <span>Add full voice-over and music (+<span data-price="audio">$20</span>) <small>Made with ElevenLabs, an online service: the lines of your story are sent to them.</small></span></label>
+        <label class="check"><input type="checkbox" name="real_people" value="Yes" data-real>
+          <span>My story includes real people (me, or people I know)</span></label>
+        <label class="check" data-permission hidden><input type="checkbox" name="permission" value="Confirmed">
+          <span>I have permission from everyone real who is named or described in my idea</span></label>
+
+        <p class="form-msg" data-form-msg role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Send my idea</button>
+        <p class="fine">This is not an order and costs nothing. Your details are only used to reply about your story.</p>
+      </form>
+
+      <div class="idea-done" data-idea-done hidden tabindex="-1">
+        <h3>Thank you. Your idea is on its way.</h3>
+        <p>You'll get a reply by email with a plan for your story, usually within a day or two. Nothing is made, and nothing is paid, until you approve it.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <span>© <span data-year>2026</span> <span data-brand>visualnovels.ai</span> <a data-contact hidden>Contact</a></span>
+    <span><span data-brand>visualnovels.ai</span> is an independent studio making custom visual novels with local AI. Sample characters and stories are originals. No trackers on this page.</span>
+  </div>
+</footer>
+
+<a class="sticky-cta" href="#idea"><span>From <span data-price="standard">$40</span></span><strong>Start your story</strong></a>
+
+<script src="site.js"></script>
+</body>
+</html>

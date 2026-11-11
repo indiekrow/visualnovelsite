@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'">
+<title>Loading…</title>
+<link rel="stylesheet" href="vn.css">
+<link rel="stylesheet" href="player.css">
+</head>
+<body>
+<main id="app">
+  <section id="title" class="screen" hidden>
+    <div class="title-art" id="title-art"></div>
+    <div class="title-card">
+      <div class="title-kicker" id="title-genre"></div>
+      <h1 id="title-name"></h1>
+      <p id="title-tagline"></p>
+      <nav class="title-menu">
+        <button type="button" id="btn-continue" hidden>Continue</button>
+        <button type="button" id="btn-new">New game</button>
+        <button type="button" id="btn-load">Load</button>
+        <button type="button" id="btn-settings">Settings</button>
+        <button type="button" id="btn-quit">Quit</button>
+      </nav>
+      <div class="title-endings" id="title-endings"></div>
+    </div>
+  </section>
+  <section id="play" class="screen" hidden>
+    <div id="vn"></div>
+    <button type="button" id="btn-menu" class="menu-btn" title="Menu (Esc)">Menu</button>
+  </section>
+</main>
+
+<dialog id="menu" class="panel">
+  <h2>Menu</h2>
+  <div class="panel-list">
+    <button type="button" data-act="save">Save</button>
+    <button type="button" data-act="load">Load</button>
+    <button type="button" data-act="settings">Settings</button>
+    <button type="button" data-act="title">Back to title</button>
+    <button type="button" data-act="quit">Quit</button>
+  </div>
+  <button type="button" class="panel-close" data-act="close">Resume</button>
+</dialog>
+
+<dialog id="slots" class="panel wide">
+  <h2 id="slots-title">Save</h2>
+  <div class="slot-grid" id="slot-grid"></div>
+  <button type="button" class="panel-close" data-act="close">Close</button>
+</dialog>
+
+<dialog id="settings" class="panel">
+  <h2>Settings</h2>
+  <label class="field">Text speed
+    <select id="set-pace">
+      <option value="slow">Slow</option>
+      <option value="normal">Normal</option>
+      <option value="quick">Quick</option>
+      <option value="off">Instant</option>
+    </select>
+  </label>
+  <button type="button" class="panel-close" data-act="close">Done</button>
+</dialog>
+
+<dialog id="backlog" class="panel wide">
+  <h2>Story so far</h2>
+  <div class="backlog-list" id="backlog-list"></div>
+  <button type="button" class="panel-close" data-act="close">Close</button>
+</dialog>
+
+<script src="vn_script.js"></script>
+<script src="vn_stage.js"></script>
+<script src="player.js"></script>
+</body>
+</html>
