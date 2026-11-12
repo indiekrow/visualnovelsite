@@ -47,8 +47,9 @@ window.SITE = {
     slots: 6,                         // how many free games you'll make in total
     taken: 0,                         // raise this each time you accept one; at `slots` the page says they're all taken
     until: "2026-11-25",              // the last day to ask, as year-month-day; the day after, the offer leaves the page. "" for no end date
-    url: "",                          // where people ask for one (a free listing on Ko-fi, a form…). "" uses kofiOrderUrl
-    how: "On our Ko-fi page, pick the free game and write your idea into the order.",   // shown under the button
+    // Where people ask for one: a Google Form (Ko-fi won't list a commission under €1). "" uses kofiOrderUrl.
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSebipaD3J6PPXoWfxmodY5fgpEIVVAPY5JaieLtxaqZnjeYLA/viewform",
+    how: "A short form: your idea and an email for the reply. No account needed.",   // shown under the button
   },
   year: 2026,
 };
